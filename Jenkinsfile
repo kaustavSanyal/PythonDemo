@@ -38,7 +38,7 @@ pipeline {
     }
     stage('Run Container') {
       steps {
-        sh 'docker run --name=java-app --privileged -d -p 8000:8000 -v /var/run/docker.sock:/var/run/docker.sock $registry:$BUILD_NUMBER &'
+        sh 'docker run --name=java-app --privileged -d -p 4000:8000 -v /var/run/docker.sock:/var/run/docker.sock $registry:$BUILD_NUMBER &'
       } 
     }
     stage('Remove Unused docker image') {
